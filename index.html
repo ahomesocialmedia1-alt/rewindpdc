@@ -262,12 +262,12 @@ canvas#ball {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 26px;
   letter-spacing: 6px;
-  color: #fff;
-  background: #e8112d;
+  color: #000;
+  background: var(--cyan);
   text-decoration: none;
   padding: 17px 0 14px;
   text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(232,17,45,0.55), 0 0 50px rgba(232,17,45,0.3);
+  box-shadow: 0 0 20px rgba(0,255,255,0.55), 0 0 50px rgba(0,255,255,0.3);
   animation: pulse 2.4s ease-in-out infinite;
   position: relative;
 }
@@ -281,8 +281,8 @@ canvas#ball {
   border-radius: 2px;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(232,17,45,0.55), 0 0 50px rgba(232,17,45,0.3); transform: scale(1); }
-  50%       { box-shadow: 0 0 30px rgba(232,17,45,0.8), 0 0 65px rgba(232,17,45,0.45); transform: scale(1.012); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0,255,255,0.55), 0 0 50px rgba(0,255,255,0.3); transform: scale(1); }
+  50%       { box-shadow: 0 0 30px rgba(0,255,255,0.8), 0 0 65px rgba(0,255,255,0.45); transform: scale(1.012); }
 }
 .cta-sub {
   text-align: center;
