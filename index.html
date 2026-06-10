@@ -262,25 +262,27 @@ canvas#ball {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 26px;
   letter-spacing: 6px;
-  color: #000;
-  background: var(--pink);
+  color: #fff;
+  background: linear-gradient(135deg, #b22234 0%, #b22234 33%, #ffffff 33%, #ffffff 66%, #3c3b6e 66%, #3c3b6e 100%);
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
   text-decoration: none;
   padding: 18px 0;
   text-transform: uppercase;
-  box-shadow: 0 0 20px #ff149380, 0 0 50px #ff149340;
+  box-shadow: 0 0 20px rgba(255,255,255,0.35), 0 0 50px rgba(60,59,110,0.35);
   animation: pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px #ff149380, 0 0 50px #ff149340; transform: scale(1); }
-  50%       { box-shadow: 0 0 30px #ff1493, 0 0 70px #ff149360; transform: scale(1.015); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.35), 0 0 50px rgba(60,59,110,0.35); transform: scale(1); }
+  50%       { box-shadow: 0 0 30px rgba(255,255,255,0.55), 0 0 70px rgba(178,34,52,0.45); transform: scale(1.015); }
 }
 .cta-sub {
   text-align: center;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #888;
-  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #aaa;
+  text-transform: none;
   margin-top: 12px;
+  line-height: 1.6;
 }
 .cta-note {
   text-align: center;
@@ -373,7 +375,7 @@ canvas#ball {
 
   <div class="cta-wrap">
     <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener">Comprar Boleto</a>
-    <div class="cta-sub">Cupo limitado · Riviera Tickets</div>
+    <div class="cta-sub">Música, baile y celebración por la independencia de Estados Unidos</div>
     <div class="cta-note">Serás redirigido a la plataforma oficial de boletos</div>
   </div>
 
