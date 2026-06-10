@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>REWIND Vol. 1 — 4 de Julio · Be Playa</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --pink:  #ff1493;
+  --cyan:  #00ffff;
+  --green: #39ff14;
+  --yellow:#ffff00;
+}
+
+html, body {
+  background: #000;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #e8e8e8;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 40px;
+}
+
+/* ── AMBIENT GLOWS ───────────────────────── */
+.glow-pink {
+  position: absolute;
+  top: -140px; left: 50%;
+  transform: translateX(-50%);
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,20,147,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.glow-cyan {
+  position: absolute;
+  bottom: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 480px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,255,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── TOP BAR ─────────────────────────────── */
+.neon-bar {
+  width: 100%;
+  height: 2px;
+  background: var(--pink);
+  box-shadow: 0 0 6px var(--pink), 0 0 15px var(--pink), 0 0 30px #ff149380;
+  flex-shrink: 0;
+}
+
+/* ── HEADER ──────────────────────────────── */
+.header {
+  width: 100%;
+  padding: 16px 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.vol-box {
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--pink);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--pink);
+  border: 1px solid #ff149340;
+  padding: 6px 12px;
+}
+.date-tag {
+  font-weight: 300;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+/* ── TITLE ───────────────────────────────── */
+.title-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 22px;
+  text-align: center;
+  padding: 0 20px;
+}
+.title-pre {
+  font-weight: 200;
+  font-size: 9px;
+  letter-spacing: 7px;
+  color: var(--green);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--green);
+  margin-bottom: 8px;
+}
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 96px;
+  letter-spacing: 16px;
+  line-height: 0.9;
+  padding-left: 16px;
+  color: #fff;
+  text-shadow:
+    0 0 8px var(--pink),
+    0 0 22px var(--pink),
+    0 0 50px #ff149360,
+    0 0 90px #ff149330;
+}
+
+/* ── DISCO BALL (CSS only) ───────────────── */
+.ball-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  width: 150px;
+  height: 150px;
+}
+.ball {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255,255,255,0.55) 0%, transparent 35%),
+    repeating-conic-gradient(from 0deg,
+      #ff1493 0deg 12deg,
+      #00ffff 12deg 24deg,
+      #39ff14 24deg 36deg,
+      #ffff00 36deg 48deg,
+      #b450ff 48deg 60deg,
+      #ff6400 60deg 72deg
+    );
+  box-shadow: 0 0 30px rgba(255,255,255,0.25), inset 0 0 40px rgba(0,0,0,0.5);
+  animation: spin 9s linear infinite;
+}
+@keyframes spin {
+  from { background-position: 0 0; filter: hue-rotate(0deg); }
+  to   { background-position: 0 0; filter: hue-rotate(360deg); }
+}
+.ball-ring {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,20,147,0.18);
+}
+.ball-ring2 {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,255,255,0.10);
+}
+
+/* ── DIVIDER ─────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  width: 240px;
+  margin: 22px 0 0;
+  position: relative;
+  z-index: 2;
+}
+.dl { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--pink)); box-shadow: 0 0 4px #ff149360; }
+.dm { width: 8px; height: 8px; background: var(--green); transform: rotate(45deg); margin: 0 6px; box-shadow: 0 0 8px var(--green); }
+.dr { flex: 1; height: 1px; background: linear-gradient(90deg, var(--cyan), transparent); box-shadow: 0 0 4px #00ffff60; }
+
+/* ── SLOGAN ──────────────────────────────── */
+.slogan {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 46px;
+  line-height: 1.7;
+  margin-top: 16px;
+  position: relative;
+  z-index: 2;
+}
+.slogan .hl {
+  color: var(--pink);
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 0 0 10px var(--pink);
+}
+
+/* ── INFO BLOCK ──────────────────────────── */
+.info-block {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 24px;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #0a0a0a;
+  border: 1px solid #ffffff0c;
+}
+.info-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #888;
+  text-transform: uppercase;
+}
+.info-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.info-value.pink { color: var(--pink); text-shadow: 0 0 8px var(--pink); }
+.info-value.cyan { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
+.info-value.green { color: var(--green); text-shadow: 0 0 8px var(--green); }
+.info-value.yellow { color: var(--yellow); text-shadow: 0 0 8px var(--yellow); }
+
+/* ── HIGHLIGHTS ──────────────────────────── */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+.tag {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  font-weight: 500;
+}
+.tag.pink { color: var(--pink); border: 1px solid #ff149340; }
+.tag.cyan { color: var(--cyan); border: 1px solid #00ffff40; }
+.tag.green { color: var(--green); border: 1px solid #39ff1440; }
+.tag.yellow { color: var(--yellow); border: 1px solid #ffff0040; }
+
+/* ── CTA ─────────────────────────────────── */
+.cta-wrap {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 32px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+.cta-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 6px;
+  color: #000;
+  background: var(--pink);
+  text-decoration: none;
+  padding: 18px 0;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px #ff149380, 0 0 50px #ff149340;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px #ff149380, 0 0 50px #ff149340; transform: scale(1); }
+  50%       { box-shadow: 0 0 30px #ff1493, 0 0 70px #ff149360; transform: scale(1.015); }
+}
+.cta-sub {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #888;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+.cta-note {
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+  margin-top: 6px;
+  font-weight: 300;
+}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer {
+  margin-top: 36px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 24px;
+}
+.footer-line {
+  width: 100%;
+  max-width: 360px;
+  height: 1px;
+  margin: 0 auto 16px;
+  background: linear-gradient(90deg, transparent 0%, var(--pink) 30%, var(--green) 50%, var(--cyan) 70%, transparent 100%);
+}
+.footer-text {
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+  line-height: 2;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="glow-pink"></div>
+  <div class="glow-cyan"></div>
+  <div class="neon-bar"></div>
+
+  <div class="header">
+    <div class="vol-box">Vol · 01</div>
+    <div class="date-tag">4 · Jul · 2025</div>
+  </div>
+
+  <div class="title-section">
+    <div class="title-pre">Be Playa · Playa del Carmen</div>
+    <div class="title">REWIND</div>
+  </div>
+
+  <div class="ball-wrap">
+    <div class="ball-ring"></div>
+    <div class="ball-ring2"></div>
+    <div class="ball"></div>
+  </div>
+
+  <div class="divider"><div class="dl"></div><div class="dm"></div><div class="dr"></div></div>
+
+  <div class="slogan">
+    La música cambió.<br>
+    <span class="hl">Las ganas de bailar no.</span>
+  </div>
+
+  <div class="info-block">
+    <div class="info-row">
+      <div class="info-label">Fecha</div>
+      <div class="info-value pink">4 de Julio</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Horario</div>
+      <div class="info-value yellow">7 pm — 1 am</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Lugar</div>
+      <div class="info-value cyan">Be Playa</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Acto Estelar</div>
+      <div class="info-value green">Cantante + DJ</div>
+    </div>
+  </div>
+
+  <div class="highlights">
+    <div class="tag pink">Cantante en Vivo</div>
+    <div class="tag cyan">DJ Set</div>
+    <div class="tag green">Sax en Vivo</div>
+    <div class="tag yellow">Photobooth Retro</div>
+  </div>
+
+  <div class="cta-wrap">
+    <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener">Comprar Boleto</a>
+    <div class="cta-sub">Cupo limitado · Riviera Tickets</div>
+    <div class="cta-note">Serás redirigido a la plataforma oficial de boletos</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-text">Be Playa &nbsp;·&nbsp; Playa del Carmen<br>4 de Julio · 2025</div>
+  </div>
+</div>
+
+</body>
+</html>
