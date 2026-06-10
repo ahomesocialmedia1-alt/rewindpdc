@@ -140,13 +140,13 @@ body {
   position: absolute;
   inset: -16px;
   border-radius: 50%;
-  border: 1px solid rgba(255,20,60,0.18);
+  border: 1px solid rgba(255,20,147,0.18);
 }
 .ball-ring2 {
   position: absolute;
   inset: -30px;
   border-radius: 50%;
-  border: 1px solid rgba(40,120,255,0.14);
+  border: 1px solid rgba(0,255,255,0.10);
 }
 canvas#ball {
   position: relative;
@@ -393,9 +393,13 @@ const W = 150, H = 150, cx = 75, cy = 75, R = 68;
 const ROWS = 14, BASE_COLS = 18;
 
 const neonPalettes = [
-  [[225,225,235],[150,150,165]],  // plateado
-  [[255,20,60],[180,10,40]],      // rojo neón
-  [[40,120,255],[15,60,180]],     // azul neón
+  [[255,20,147],[180,10,110]],
+  [[0,255,255],[0,170,170]],
+  [[57,255,20],[30,180,10]],
+  [[255,220,50],[200,160,20]],
+  [[180,0,255],[120,0,180]],
+  [[255,90,30],[180,55,10]],
+  [[210,210,240],[150,150,180]],
 ];
 
 let rotationOffset = 0;
@@ -421,9 +425,9 @@ function drawBall(offset) {
       const dot = Math.max(0, nx * 0.4 + ny * (-0.5) + nz * 0.77);
 
       const palIdx = (row * 5 + col * 3) % neonPalettes.length;
-      const pal = dot > 0.5 ? neonPalettes[palIdx][0] : neonPalettes[palIdx][1];
+      const pal = neonPalettes[palIdx][0];
 
-      let bright = 0.05 + dot * 0.95;
+      let bright = 0.65 + dot * 0.65;
       if (dot > 0.75) bright += Math.pow(dot, 8) * 1.5;
       bright = Math.min(1.8, bright);
 
