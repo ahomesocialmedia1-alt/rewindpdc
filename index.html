@@ -263,6 +263,49 @@ canvas#ball {
 .info-value.green { color: var(--green); text-shadow: 0 0 8px var(--green); }
 .info-value.yellow { color: var(--yellow); text-shadow: 0 0 8px var(--yellow); }
 
+/* ── USA COMMEMORATIVE CARD ───────────────── */
+.usa-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 16px auto 0;
+  padding: 18px 22px;
+  position: relative;
+  z-index: 2;
+  background: #0a0a0a;
+  border: 1px solid #ffffff0c;
+  border-top: 2px solid #ffffff40;
+  border-image: linear-gradient(90deg, #b22234, #ffffff, #3c5bff) 1;
+  text-align: center;
+}
+.usa-card-line1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+.usa-card-tag {
+  margin-top: 10px;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+.usa-card-decades {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #999;
+  text-transform: uppercase;
+}
+.usa-card-line2 {
+  margin-top: 10px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #ccc;
+}
+
 /* ── HIGHLIGHTS ──────────────────────────── */
 .highlights {
   display: flex;
@@ -409,10 +452,13 @@ canvas#ball {
       <div class="info-label">Acto Estelar</div>
       <div class="info-value green">Cantante + DJ</div>
     </div>
-    <div class="info-row">
-      <div class="info-label">Celebración Especial</div>
-      <div class="info-value">🎆 Toast de Medianoche · USA</div>
-    </div>
+  </div>
+
+  <div class="usa-card">
+    <div class="usa-card-line1">Las banderas nos distinguen.<br>La música nos une.</div>
+    <div class="usa-card-tag">4th of July Independence Celebration</div>
+    <div class="usa-card-decades">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
+    <div class="usa-card-line2">Revive la música que marcó una generación.</div>
   </div>
 
   <div class="highlights">
