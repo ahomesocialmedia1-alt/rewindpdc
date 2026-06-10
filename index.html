@@ -97,6 +97,46 @@ body {
   text-shadow: 0 0 8px var(--cyan);
 }
 
+/* ── USA COMMEMORATIVE BADGE ─────────────── */
+.usa-badge {
+  position: relative;
+  z-index: 2;
+  margin: 16px 24px 0;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #0a0a0a;
+  border: 1px solid #ffffff18;
+}
+.usa-badge .flag-dots {
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.usa-badge .flag-dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: block;
+}
+.usa-badge .flag-dots span:nth-child(1) { background: #b22234; box-shadow: 0 0 5px #b22234; }
+.usa-badge .flag-dots span:nth-child(2) { background: #f4f4f4; box-shadow: 0 0 5px #f4f4f4; }
+.usa-badge .flag-dots span:nth-child(3) { background: #3c5bff; box-shadow: 0 0 5px #3c5bff; }
+.usa-badge-text {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #bbb;
+  text-align: center;
+  line-height: 1.6;
+}
+.usa-badge-text strong {
+  color: #fff;
+  font-weight: 600;
+}
+
 /* ── TITLE ───────────────────────────────── */
 .title-section {
   position: relative;
@@ -263,26 +303,17 @@ canvas#ball {
   font-size: 26px;
   letter-spacing: 6px;
   color: #000;
-  background: var(--cyan);
+  background: var(--pink);
   text-decoration: none;
   padding: 17px 0 14px;
   text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(0,255,255,0.55), 0 0 50px rgba(0,255,255,0.3);
+  box-shadow: 0 0 20px rgba(255,20,147,0.55), 0 0 50px rgba(255,20,147,0.3);
   animation: pulse 2.4s ease-in-out infinite;
   position: relative;
 }
-.cta-btn::after {
-  content: '';
-  display: block;
-  width: 56px;
-  height: 3px;
-  margin: 10px auto 0;
-  background: linear-gradient(90deg, #b22234, #ffffff, #3c5bff);
-  border-radius: 2px;
-}
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(0,255,255,0.55), 0 0 50px rgba(0,255,255,0.3); transform: scale(1); }
-  50%       { box-shadow: 0 0 30px rgba(0,255,255,0.8), 0 0 65px rgba(0,255,255,0.45); transform: scale(1.012); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255,20,147,0.55), 0 0 50px rgba(255,20,147,0.3); transform: scale(1); }
+  50%       { box-shadow: 0 0 30px rgba(255,20,147,0.8), 0 0 65px rgba(255,20,147,0.45); transform: scale(1.012); }
 }
 .cta-sub {
   text-align: center;
@@ -338,6 +369,11 @@ canvas#ball {
     <div class="date-tag">4 · Jul · 2026</div>
   </div>
 
+  <div class="usa-badge">
+    <div class="flag-dots"><span></span><span></span><span></span></div>
+    <div class="usa-badge-text">Edición especial · <strong>Toast de Medianoche</strong> por la Independencia de USA</div>
+  </div>
+
   <div class="title-section">
     <div class="title-pre">Be Playa · Playa del Carmen</div>
     <div class="title">REWIND</div>
@@ -372,6 +408,10 @@ canvas#ball {
     <div class="info-row">
       <div class="info-label">Acto Estelar</div>
       <div class="info-value green">Cantante + DJ</div>
+    </div>
+    <div class="info-row">
+      <div class="info-label">Celebración Especial</div>
+      <div class="info-value">🎆 Toast de Medianoche · USA</div>
     </div>
   </div>
 
