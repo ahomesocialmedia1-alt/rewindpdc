@@ -263,17 +263,27 @@ canvas#ball {
   font-size: 26px;
   letter-spacing: 6px;
   color: #fff;
-  background: linear-gradient(135deg, #b22234 0%, #b22234 33%, #ffffff 33%, #ffffff 66%, #3c3b6e 66%, #3c3b6e 100%);
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  background: #0a1340;
+  border: 1px solid #3c5bff60;
   text-decoration: none;
-  padding: 18px 0;
+  padding: 17px 0 14px;
   text-transform: uppercase;
-  box-shadow: 0 0 20px rgba(255,255,255,0.35), 0 0 50px rgba(60,59,110,0.35);
+  box-shadow: 0 0 18px rgba(60,91,255,0.35), 0 0 40px rgba(60,91,255,0.18);
   animation: pulse 2.4s ease-in-out infinite;
+  position: relative;
+}
+.cta-btn::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, #b22234, #ffffff, #3c5bff);
+  border-radius: 2px;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255,255,255,0.35), 0 0 50px rgba(60,59,110,0.35); transform: scale(1); }
-  50%       { box-shadow: 0 0 30px rgba(255,255,255,0.55), 0 0 70px rgba(178,34,52,0.45); transform: scale(1.015); }
+  0%, 100% { box-shadow: 0 0 18px rgba(60,91,255,0.35), 0 0 40px rgba(60,91,255,0.18); transform: scale(1); }
+  50%       { box-shadow: 0 0 26px rgba(60,91,255,0.55), 0 0 55px rgba(60,91,255,0.3); transform: scale(1.012); }
 }
 .cta-sub {
   text-align: center;
