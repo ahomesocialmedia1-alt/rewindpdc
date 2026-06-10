@@ -278,16 +278,24 @@ canvas#ball {
   text-align: center;
 }
 .usa-card-line1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 -12px;
+}
+.usa-card-line1 .usa-card-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 14px;
   line-height: 1.6;
   color: #f0f0f0;
+  flex: 1;
 }
 .usa-card-line1 .flag-emoji {
-  font-size: 12px;
+  font-size: 22px;
   font-style: normal;
-  vertical-align: middle;
+  flex-shrink: 0;
 }
 .usa-card-tag {
   margin-top: 10px;
@@ -460,7 +468,11 @@ canvas#ball {
   </div>
 
   <div class="usa-card">
-    <div class="usa-card-line1"><span class="flag-emoji">🇲🇽</span> Las banderas nos distinguen.<br>La música nos une. <span class="flag-emoji">🇺🇸</span></div>
+    <div class="usa-card-line1">
+      <span class="flag-emoji">🇲🇽</span>
+      <span class="usa-card-text">Las banderas nos distinguen.<br>La música nos une.</span>
+      <span class="flag-emoji">🇺🇸</span>
+    </div>
     <div class="usa-card-tag">4th of July Independence Celebration</div>
     <div class="usa-card-decades">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
     <div class="usa-card-line2">Revive la música que marcó una generación.</div>
