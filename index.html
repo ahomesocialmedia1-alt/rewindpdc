@@ -36,7 +36,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0 0 40px;
 }
 
@@ -138,6 +137,26 @@ body {
   font-weight: 600;
 }
 
+/* ── MAIN LAYOUT ─────────────────────────── */
+.main-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.visual-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ── TITLE ───────────────────────────────── */
 .title-section {
   position: relative;
@@ -193,6 +212,8 @@ canvas#ball {
   position: relative;
   z-index: 2;
   border-radius: 50%;
+  width: 100%;
+  height: 100%;
 }
 
 /* ── DIVIDER ─────────────────────────────── */
@@ -247,22 +268,35 @@ canvas#ball {
   background: #0a0a0a;
   border: 1px solid #ffffff0c;
 }
+.info-row.highlight {
+  border: 1px solid #ff149330;
+  background: #120508;
+}
 .info-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   font-size: 9px;
   letter-spacing: 3px;
   color: #888;
   text-transform: uppercase;
 }
+.info-label .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.info-label .dot.pink   { background: var(--pink);   box-shadow: 0 0 6px var(--pink); }
+.info-label .dot.cyan   { background: var(--cyan);   box-shadow: 0 0 6px var(--cyan); }
+.info-label .dot.green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
+.info-label .dot.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
 .info-value {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 18px;
   letter-spacing: 2px;
   color: #fff;
 }
-.info-value.pink { color: var(--pink); text-shadow: 0 0 8px var(--pink); }
-.info-value.cyan { color: var(--cyan); text-shadow: 0 0 8px var(--cyan); }
-.info-value.green { color: var(--green); text-shadow: 0 0 8px var(--green); }
-.info-value.yellow { color: var(--yellow); text-shadow: 0 0 8px var(--yellow); }
+.info-value.highlight { color: var(--pink); text-shadow: 0 0 8px var(--pink); }
 
 /* ── USA COMMEMORATIVE CARD ───────────────── */
 .usa-card {
@@ -332,16 +366,27 @@ canvas#ball {
   z-index: 2;
 }
 .tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 9px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: #ddd;
+  border: 1px solid #ffffff14;
+  background: #0a0a0a;
   padding: 7px 14px;
   font-weight: 500;
 }
-.tag.pink { color: var(--pink); border: 1px solid #ff149340; }
-.tag.cyan { color: var(--cyan); border: 1px solid #00ffff40; }
-.tag.green { color: var(--green); border: 1px solid #39ff1440; }
-.tag.yellow { color: var(--yellow); border: 1px solid #ffff0040; }
+.tag .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.tag .dot.pink   { background: var(--pink);   box-shadow: 0 0 6px var(--pink); }
+.tag .dot.cyan   { background: var(--cyan);   box-shadow: 0 0 6px var(--cyan); }
+.tag .dot.green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
+.tag .dot.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
 
 /* ── CTA ─────────────────────────────────── */
 .cta-wrap {
@@ -397,6 +442,7 @@ canvas#ball {
   position: relative;
   z-index: 2;
   padding: 0 24px;
+  width: 100%;
 }
 .footer-line {
   width: 100%;
@@ -414,14 +460,67 @@ canvas#ball {
 }
 
 /* ── DESKTOP / PANTALLA GRANDE ────────────── */
-@media (min-width: 700px) {
-  .wrap { max-width: 640px; }
-  .title { font-size: 130px; }
-  .slogan { font-size: 19px; padding: 0 70px; }
-  .info-block, .usa-card, .cta-wrap, .footer-line { max-width: 460px; }
-  .highlights { max-width: 460px; }
-  .info-value { font-size: 22px; }
-  .cta-btn { font-size: 32px; padding: 22px 0 18px; }
+@media (min-width: 900px) {
+  body { align-items: center; }
+
+  .wrap {
+    max-width: 1140px;
+    min-height: auto;
+    padding: 0 0 70px;
+  }
+
+  .glow-pink {
+    top: -220px;
+    width: 900px; height: 900px;
+  }
+  .glow-cyan {
+    bottom: -260px;
+    width: 900px; height: 600px;
+  }
+
+  .header, .usa-badge {
+    max-width: 720px;
+  }
+  .usa-badge { margin: 22px auto 0; padding: 10px 20px; }
+
+  .main-grid {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 50px;
+    padding: 0 50px;
+  }
+  .visual-col, .content-col {
+    width: auto;
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .title-section { margin-top: 0; padding: 0; }
+  .title-pre { font-size: 11px; letter-spacing: 9px; }
+  .title { font-size: 150px; letter-spacing: 22px; padding-left: 22px; }
+
+  .ball-wrap { width: 220px; height: 220px; margin-top: 26px; }
+  .ball-ring { inset: -22px; }
+  .ball-ring2 { inset: -42px; }
+
+  .divider { width: 320px; margin-top: 30px; }
+
+  .slogan { font-size: 20px; padding: 0 10px; margin-top: 22px; max-width: 420px; }
+
+  .info-block, .usa-card, .highlights, .cta-wrap, .footer-line {
+    max-width: 420px;
+    padding: 0;
+  }
+  .info-block { margin-top: 0; }
+  .info-value { font-size: 20px; }
+  .usa-card { margin-top: 18px; }
+  .highlights { margin-top: 24px; }
+  .cta-wrap { margin-top: 34px; }
+  .cta-btn { font-size: 30px; padding: 20px 0 17px; }
+
+  .footer { margin-top: 60px; }
 }
 </style>
 </head>
@@ -442,65 +541,71 @@ canvas#ball {
     <div class="usa-badge-text">Edición especial · <strong>Toast de Medianoche</strong> por la Independencia de USA</div>
   </div>
 
-  <div class="title-section">
-    <div class="title-pre">Be Playa · Playa del Carmen</div>
-    <div class="title">REWIND</div>
-  </div>
+  <div class="main-grid">
+    <div class="visual-col">
+      <div class="title-section">
+        <div class="title-pre">Be Playa · Playa del Carmen</div>
+        <div class="title">REWIND</div>
+      </div>
 
-  <div class="ball-wrap">
-    <div class="ball-ring"></div>
-    <div class="ball-ring2"></div>
-    <canvas id="ball" width="150" height="150"></canvas>
-  </div>
+      <div class="ball-wrap">
+        <div class="ball-ring"></div>
+        <div class="ball-ring2"></div>
+        <canvas id="ball" width="220" height="220"></canvas>
+      </div>
 
-  <div class="divider"><div class="dl"></div><div class="dm"></div><div class="dr"></div></div>
+      <div class="divider"><div class="dl"></div><div class="dm"></div><div class="dr"></div></div>
 
-  <div class="slogan">
-    La música cambió.<br>
-    <span class="hl">Las ganas de bailar no.</span>
-  </div>
-
-  <div class="info-block">
-    <div class="info-row">
-      <div class="info-label">Fecha</div>
-      <div class="info-value pink">4 de Julio</div>
+      <div class="slogan">
+        La música cambió.<br>
+        <span class="hl">Las ganas de bailar no.</span>
+      </div>
     </div>
-    <div class="info-row">
-      <div class="info-label">Horario</div>
-      <div class="info-value yellow">19:00 hrs — 1:00 hrs</div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">Lugar</div>
-      <div class="info-value cyan">Be Playa</div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">Acto Estelar</div>
-      <div class="info-value green">Cantante + DJ</div>
-    </div>
-  </div>
 
-  <div class="usa-card">
-    <div class="usa-card-line1">
-      <span class="flag-emoji">🇲🇽</span>
-      <span class="usa-card-text">Las banderas nos distinguen.<br>La música nos une.</span>
-      <span class="flag-emoji">🇺🇸</span>
+    <div class="content-col">
+      <div class="info-block">
+        <div class="info-row">
+          <div class="info-label"><span class="dot pink"></span>Fecha</div>
+          <div class="info-value">4 de Julio</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="dot yellow"></span>Horario</div>
+          <div class="info-value">19:00 — 1:00 hrs</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label"><span class="dot cyan"></span>Lugar</div>
+          <div class="info-value">Be Playa</div>
+        </div>
+        <div class="info-row highlight">
+          <div class="info-label"><span class="dot green"></span>Acto Estelar</div>
+          <div class="info-value highlight">Cantante + DJ</div>
+        </div>
+      </div>
+
+      <div class="usa-card">
+        <div class="usa-card-line1">
+          <span class="flag-emoji">🇲🇽</span>
+          <span class="usa-card-text">Las banderas nos distinguen.<br>La música nos une.</span>
+          <span class="flag-emoji">🇺🇸</span>
+        </div>
+        <div class="usa-card-tag">4th of July Independence Celebration</div>
+        <div class="usa-card-decades">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
+        <div class="usa-card-line2">Revive la música que marcó una generación.</div>
+      </div>
+
+      <div class="highlights">
+        <div class="tag"><span class="dot pink"></span>Cantante en Vivo</div>
+        <div class="tag"><span class="dot cyan"></span>DJ Set</div>
+        <div class="tag"><span class="dot green"></span>Sax en Vivo</div>
+        <div class="tag"><span class="dot yellow"></span>Photobooth Retro</div>
+      </div>
+
+      <div class="cta-wrap">
+        <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener">Comprar Boleto</a>
+        <div class="cta-sub">Cupo Limitado · Riviera Tickets</div>
+        <div class="cta-note">Serás redirigido a la plataforma oficial de boletos</div>
+      </div>
     </div>
-    <div class="usa-card-tag">4th of July Independence Celebration</div>
-    <div class="usa-card-decades">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
-    <div class="usa-card-line2">Revive la música que marcó una generación.</div>
-  </div>
-
-  <div class="highlights">
-    <div class="tag pink">Cantante en Vivo</div>
-    <div class="tag cyan">DJ Set</div>
-    <div class="tag green">Sax en Vivo</div>
-    <div class="tag yellow">Photobooth Retro</div>
-  </div>
-
-  <div class="cta-wrap">
-    <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener">Comprar Boleto</a>
-    <div class="cta-sub">Cupo Limitado · Riviera Tickets</div>
-    <div class="cta-note">Serás redirigido a la plataforma oficial de boletos</div>
   </div>
 
   <div class="footer">
@@ -515,7 +620,7 @@ canvas#ball {
 ═══════════════════════════════════════════════ */
 const ballCanvas = document.getElementById('ball');
 const bctx = ballCanvas.getContext('2d');
-const W = 150, H = 150, cx = 75, cy = 75, R = 68;
+const W = 220, H = 220, cx = 110, cy = 110, R = 100;
 const ROWS = 14, BASE_COLS = 18;
 
 const neonPalettes = [
@@ -542,13 +647,6 @@ function drawBall(offset) {
     for (let col = 0; col < numCols; col++) {
       const theta1 = (col / numCols) * 2 * Math.PI + offset;
       const theta2 = ((col + 1) / numCols) * 2 * Math.PI + offset;
-      const tMid = (theta1 + theta2) / 2;
-      const pMid = (phi1 + phi2) / 2;
-
-      const nx = Math.sin(pMid) * Math.cos(tMid);
-      const ny = Math.cos(pMid);
-      const nz = Math.sin(pMid) * Math.sin(tMid);
-      const dot = Math.max(0, nx * 0.4 + ny * (-0.5) + nz * 0.77);
 
       const palIdx = (row * 5 + col * 3) % neonPalettes.length;
       const pal = neonPalettes[palIdx][0];
@@ -575,7 +673,7 @@ function drawBall(offset) {
       bctx.fillStyle = `rgb(${rc},${gc},${bc})`;
       bctx.fill();
       bctx.strokeStyle = 'rgba(0,0,0,0.45)';
-      bctx.lineWidth = 0.4;
+      bctx.lineWidth = 0.6;
       bctx.stroke();
     }
   }
@@ -585,7 +683,7 @@ function drawBall(offset) {
   bctx.beginPath();
   bctx.arc(cx, cy, R, 0, Math.PI * 2);
   bctx.clip();
-  const shine = bctx.createRadialGradient(cx - 22, cy - 22, 4, cx, cy, R);
+  const shine = bctx.createRadialGradient(cx - 32, cy - 32, 6, cx, cy, R);
   shine.addColorStop(0, 'rgba(255,255,255,0.42)');
   shine.addColorStop(0.28, 'rgba(255,255,255,0.05)');
   shine.addColorStop(1, 'rgba(0,0,0,0.55)');
