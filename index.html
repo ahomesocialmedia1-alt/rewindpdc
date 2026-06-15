@@ -71,35 +71,12 @@ body {
 /* ── HEADER ──────────────────────────────── */
 .header {
   width: 100%;
-  padding: 16px 24px 0;
+  padding: 12px 24px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
   z-index: 2;
-}
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.vol-box {
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 4px;
-  color: var(--pink);
-  text-transform: uppercase;
-  text-shadow: 0 0 8px var(--pink);
-  border: 1px solid #ff149340;
-  padding: 7px 14px;
-}
-.date-tag {
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: var(--cyan);
-  text-transform: uppercase;
-  text-shadow: 0 0 8px var(--cyan);
 }
 
 /* ── LANGUAGE TOGGLE ─────────────────────── */
@@ -237,6 +214,33 @@ body {
     0 0 90px #ff149330;
 }
 
+/* ── TITLE META (Vol · 01 + fecha) ────────── */
+.title-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.title-meta .vol-box {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--pink);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--pink);
+  border: 1px solid #ff149340;
+  padding: 6px 12px;
+}
+.title-meta .date-tag {
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
 /* ── DISCO BALL (canvas) ──────────────────── */
 .rw-ball-wrap {
   position: relative;
@@ -312,8 +316,8 @@ body {
   font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #e8e8e8;
-  text-shadow: 0 0 6px rgba(255,255,255,0.25);
+  color: var(--green);
+  text-shadow: 0 0 8px var(--green), 0 0 18px #39ff1440;
   text-align: center;
   padding: 0 24px;
   position: relative;
@@ -678,6 +682,13 @@ body {
   box-shadow: 0 0 20px rgba(255,20,147,0.55), 0 0 50px rgba(255,20,147,0.3);
   animation: pulse 2.4s ease-in-out infinite;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cta-btn:hover {
+  animation-play-state: paused;
+  transform: scale(1.045);
+  box-shadow: 0 0 32px rgba(255,20,147,0.9), 0 0 75px rgba(255,20,147,0.55);
 }
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 20px rgba(255,20,147,0.55), 0 0 50px rgba(255,20,147,0.3); transform: scale(1); }
@@ -748,9 +759,10 @@ body {
     max-width: 720px;
   }
   .usa-badge { margin: 22px auto 0; padding: 10px 20px; }
-  .vol-box { font-size: 14px; padding: 8px 16px; }
-  .date-tag { font-size: 14px; }
   .lang-btn { font-size: 12px; padding: 7px 14px; }
+  .title-meta { margin-top: 18px; gap: 16px; }
+  .title-meta .vol-box { font-size: 14px; padding: 8px 16px; }
+  .title-meta .date-tag { font-size: 14px; }
 
   .main-grid {
     flex-direction: row;
@@ -828,10 +840,6 @@ body {
   <div class="neon-bar"></div>
 
   <div class="header">
-    <div class="header-left">
-      <div class="vol-box">Vol · 01</div>
-      <div class="date-tag">4 · Jul · 2026</div>
-    </div>
     <div class="lang-toggle" role="group" aria-label="Selector de idioma / Language selector">
       <span class="lang-icon" aria-hidden="true">🌐</span>
       <button type="button" class="lang-btn active" id="langEs" data-lang="es">ES</button>
@@ -849,6 +857,10 @@ body {
       <div class="title-section">
         <div class="title-pre">Be Playa · Playa del Carmen</div>
         <div class="title">REWIND</div>
+        <div class="title-meta">
+          <span class="vol-box">Vol · 01</span>
+          <span class="date-tag" data-i18n="heroDate">4 de Julio 2026</span>
+        </div>
       </div>
 
       <div class="rw-ball-wrap" aria-hidden="true">
@@ -1151,6 +1163,10 @@ body {
     genres: {
       es: '70s · 80s · 90s · 2000s — Funk · Electro · Rock · House',
       en: '70s · 80s · 90s · 2000s — Funk · Electro · Rock · House'
+    },
+    heroDate: {
+      es: '4 de Julio 2026',
+      en: 'July 4th, 2026'
     },
     countdownLabel: {
       es: 'Cuenta Regresiva',
