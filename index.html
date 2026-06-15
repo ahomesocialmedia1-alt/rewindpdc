@@ -237,6 +237,67 @@ body {
   text-shadow: 0 0 10px var(--pink);
 }
 
+/* ── REFRAME ─────────────────────────────── */
+.reframe {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  padding: 0 50px;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #bbb;
+  position: relative;
+  z-index: 2;
+}
+.reframe .hl {
+  color: var(--cyan);
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 0 0 10px var(--cyan);
+}
+
+/* ── COUNTDOWN ───────────────────────────── */
+.countdown {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+.cd-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 42px;
+}
+.cd-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 8px var(--cyan), 0 0 22px var(--cyan), 0 0 50px #00ffff40;
+}
+.cd-label {
+  margin-top: 6px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #888;
+  text-transform: uppercase;
+}
+.cd-sep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink);
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
 /* ── INFO BLOCK ──────────────────────────── */
 .info-block {
   width: 100%;
@@ -292,29 +353,25 @@ body {
   width: 100%;
   max-width: 360px;
   margin: 16px auto 0;
-  padding: 18px 22px;
+  padding: 24px 26px;
   position: relative;
   z-index: 2;
   background: #0a0a0a;
   border: 1px solid #ffffff0c;
-  border-top: 2px solid #ffffff40;
-  border-image: linear-gradient(90deg, #b22234, #ffffff, #3c5bff) 1;
   text-align: center;
 }
 .usa-card-line1 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin: 0 -4px;
+  justify-content: center;
+  gap: 16px;
 }
 .usa-card-line1 .usa-card-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #f0f0f0;
-  flex: 1;
 }
 .usa-card-line1 .flag-emoji {
   font-size: 22px;
@@ -322,7 +379,7 @@ body {
   flex-shrink: 0;
 }
 .usa-card-tag {
-  margin-top: 10px;
+  margin-top: 16px;
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -330,14 +387,15 @@ body {
   text-shadow: 0 0 8px var(--cyan);
 }
 .usa-card-decades {
-  margin-top: 8px;
+  margin-top: 12px;
   font-size: 10px;
   letter-spacing: 1px;
   color: #999;
   text-transform: uppercase;
+  line-height: 1.8;
 }
 .usa-card-line2 {
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 11px;
   letter-spacing: 1px;
   color: #ccc;
@@ -496,9 +554,20 @@ body {
 
   .slogan { font-size: 20px; padding: 0 10px; margin-top: 22px; max-width: 420px; }
 
-  .info-block, .usa-card, .highlights, .cta-wrap, .footer-line {
+  .reframe { font-size: 15px; padding: 0; max-width: 420px; }
+
+  .countdown { gap: 20px; margin-top: 26px; }
+  .cd-item { min-width: 54px; }
+  .cd-num { font-size: 36px; }
+  .cd-sep { font-size: 30px; }
+
+  .info-block, .highlights, .cta-wrap, .footer-line {
     max-width: 420px;
     padding: 0;
+  }
+  .usa-card {
+    max-width: 420px;
+    padding: 28px 32px;
   }
   .info-block { margin-top: 0; }
   .info-value { font-size: 20px; }
@@ -544,6 +613,21 @@ body {
       <div class="slogan">
         La música cambió.<br>
         <span class="hl">Las ganas de bailar no.</span>
+      </div>
+
+      <div class="reframe">
+        Los himnos que te hicieron bailar.<br>
+        <span class="hl">Sin fecha de caducidad.</span>
+      </div>
+
+      <div class="countdown" id="countdown" aria-label="Cuenta regresiva para REWIND">
+        <div class="cd-item"><span class="cd-num" id="cdDays">00</span><span class="cd-label">Días</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Hrs</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Min</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Seg</span></div>
       </div>
     </div>
 
@@ -709,6 +793,35 @@ body {
     if(!reduced)requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+</script>
+
+<script>
+(function(){
+  var target = new Date('2026-07-04T19:00:00-05:00').getTime();
+  var elDays = document.getElementById('cdDays');
+  var elHours = document.getElementById('cdHours');
+  var elMins = document.getElementById('cdMins');
+  var elSecs = document.getElementById('cdSecs');
+  if(!elDays) return;
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function tick(){
+    var diff = target - Date.now();
+    if(diff < 0) diff = 0;
+    var totalSecs = Math.floor(diff/1000);
+    var days = Math.floor(totalSecs/86400);
+    var hours = Math.floor((totalSecs%86400)/3600);
+    var mins = Math.floor((totalSecs%3600)/60);
+    var secs = totalSecs%60;
+    elDays.textContent = pad(days);
+    elHours.textContent = pad(hours);
+    elMins.textContent = pad(mins);
+    elSecs.textContent = pad(secs);
+  }
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 </body>
