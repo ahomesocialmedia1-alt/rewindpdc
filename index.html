@@ -509,6 +509,132 @@ body {
 .tag .dot.green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
 .tag .dot.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
 
+/* ── TALENT / LINEUP ─────────────────────── */
+.talent-section {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 24px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+.talent-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 8px var(--pink), 0 0 20px #ff149340;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.talent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.talent-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #0a0a0a;
+  border: 1px solid #ffffff0c;
+  padding: 16px 10px;
+}
+.talent-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: #111;
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 12px #00ffff40;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.talent-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.talent-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.talent-role {
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* ── SURPRISES OF THE NIGHT ──────────────── */
+.surprises {
+  width: 100%;
+  max-width: 360px;
+  margin: 36px auto 0;
+  padding: 24px 22px;
+  position: relative;
+  z-index: 2;
+  background: #0a0a0a;
+  border: 1px solid #ff149330;
+  box-shadow: 0 0 30px rgba(255,20,147,0.08);
+  text-align: center;
+}
+.surprises-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 10px var(--pink), 0 0 24px #ff149340;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.surprises-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.surprise-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #ddd;
+  border: 1px solid #ffffff14;
+  background: #000;
+  padding: 8px 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.surprise-item .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.surprise-item .dot.pink   { background: var(--pink);   box-shadow: 0 0 6px var(--pink); }
+.surprise-item .dot.cyan   { background: var(--cyan);   box-shadow: 0 0 6px var(--cyan); }
+.surprise-item .dot.green  { background: var(--green);  box-shadow: 0 0 6px var(--green); }
+.surprise-item .dot.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+.surprises-more {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+
 /* ── CTA ─────────────────────────────────── */
 .cta-wrap {
   width: 100%;
@@ -653,6 +779,19 @@ body {
   .info-value { font-size: 24px; }
   .usa-card { margin-top: 18px; }
   .highlights { margin-top: 24px; }
+
+  .talent-section { max-width: 420px; padding: 0; margin-top: 28px; }
+  .talent-title { font-size: 24px; margin-bottom: 18px; }
+  .talent-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .talent-photo { width: 64px; height: 64px; font-size: 28px; }
+  .talent-name { font-size: 14px; }
+  .talent-role { font-size: 9px; }
+
+  .surprises { max-width: 720px; margin-top: 50px; padding: 30px 40px; }
+  .surprises-title { font-size: 26px; }
+  .surprise-item { font-size: 12px; padding: 9px 16px; }
+  .surprises-more { font-size: 16px; }
+
   .cta-wrap { margin-top: 34px; }
   .cta-btn { font-size: 36px; padding: 20px 0 17px; }
 
@@ -737,7 +876,8 @@ body {
         </div>
         <div class="info-row highlight">
           <div class="info-label"><span class="dot green"></span><span data-i18n="lblActo">Acto Estelar</span></div>
-          <div class="info-value highlight" data-i18n="valActo">Cantante + DJ</div>
+          <!-- TODO: sustituir por el nombre real del acto estelar cuando se confirme -->
+          <div class="info-value highlight" data-i18n="tba">Por Anunciar</div>
         </div>
       </div>
 
@@ -759,12 +899,59 @@ body {
         <div class="tag"><span class="dot yellow"></span><span data-i18n="tagPhotobooth">Photobooth Retro</span></div>
       </div>
 
+      <!-- ── TALENTO / LINEUP ────────────────────────────────────────
+           Para cada acto, sustituye:
+           1) .talent-photo: borra el emoji y agrega <img src="ruta-foto.jpg" alt="Nombre del artista">
+           2) .talent-name: reemplaza "Por Anunciar" por el nombre real
+      ── ───────────────────────────────────────────────────────────── -->
+      <div class="talent-section">
+        <div class="talent-title" data-i18n="talentTitle">El Talento</div>
+        <div class="talent-grid">
+          <div class="talent-card">
+            <div class="talent-photo" aria-hidden="true">🎤</div>
+            <!-- TODO: nombre real del cantante -->
+            <div class="talent-name" data-i18n="tba">Por Anunciar</div>
+            <div class="talent-role" data-i18n="tagCantante">Cantante en Vivo</div>
+          </div>
+          <div class="talent-card">
+            <div class="talent-photo" aria-hidden="true">🎧</div>
+            <!-- TODO: nombre real del DJ -->
+            <div class="talent-name" data-i18n="tba">Por Anunciar</div>
+            <div class="talent-role">DJ Set</div>
+          </div>
+          <div class="talent-card">
+            <div class="talent-photo" aria-hidden="true">🎷</div>
+            <!-- TODO: nombre real del saxofonista -->
+            <div class="talent-name" data-i18n="tba">Por Anunciar</div>
+            <div class="talent-role" data-i18n="tagSax">Sax en Vivo</div>
+          </div>
+          <div class="talent-card">
+            <div class="talent-photo" aria-hidden="true">📸</div>
+            <!-- TODO: nombre real del proveedor de photobooth -->
+            <div class="talent-name" data-i18n="tba">Por Anunciar</div>
+            <div class="talent-role" data-i18n="tagPhotobooth">Photobooth Retro</div>
+          </div>
+        </div>
+      </div>
+
       <div class="cta-wrap">
         <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener" data-i18n="ctaBtn">Comprar Boleto</a>
         <div class="cta-sub" data-i18n="ctaSub">Cupo Limitado · Riviera Tickets</div>
         <div class="cta-note" data-i18n="ctaNote">Serás redirigido a la plataforma oficial de boletos</div>
       </div>
     </div>
+  </div>
+
+  <!-- ── SORPRESAS DE LA NOCHE ─────────────────────────────────────── -->
+  <div class="surprises">
+    <div class="surprises-title" data-i18n="surprisesTitle">Sorpresas de la Noche</div>
+    <div class="surprises-list">
+      <div class="surprise-item"><span class="dot pink"></span><span data-i18n="surpBattle">Reta de Baile</span></div>
+      <div class="surprise-item"><span class="dot cyan"></span><span data-i18n="surpContest">Concurso de Baile</span></div>
+      <div class="surprise-item"><span class="dot green"></span><span data-i18n="surpCostume">Concurso al Mejor Disfraz</span></div>
+      <div class="surprise-item"><span class="dot yellow"></span><span data-i18n="surpRaffle">Rifas en Vivo</span></div>
+    </div>
+    <div class="surprises-more" data-i18n="surpMore">Y más sorpresas durante la noche…</div>
   </div>
 
   <div class="footer">
@@ -948,7 +1135,7 @@ body {
     lblActo:   { es: 'Acto Estelar', en: 'Headline Act' },
     valFecha:  { es: '4 de Julio', en: 'July 4th' },
     valHorario:{ es: '19:00 — 1:00 hrs', en: '7:00 PM — 1:00 AM' },
-    valActo:   { es: 'Cantante + DJ', en: 'Live Singer + DJ' },
+    tba: { es: 'Por Anunciar', en: 'To Be Announced' },
     usaCardText: {
       es: 'Las banderas nos distinguen.<br>La música nos une.',
       en: 'Different flags set us apart.<br>The music brings us together.'
@@ -960,6 +1147,13 @@ body {
     tagCantante:   { es: 'Cantante en Vivo', en: 'Live Singer' },
     tagSax:        { es: 'Sax en Vivo', en: 'Live Sax' },
     tagPhotobooth: { es: 'Photobooth Retro', en: 'Retro Photobooth' },
+    talentTitle: { es: 'El Talento', en: 'The Lineup' },
+    surprisesTitle: { es: 'Sorpresas de la Noche', en: 'Surprises of the Night' },
+    surpBattle:  { es: 'Reta de Baile', en: 'Dance Battle' },
+    surpContest: { es: 'Concurso de Baile', en: 'Dance Contest' },
+    surpCostume: { es: 'Concurso al Mejor Disfraz', en: 'Best Costume Contest' },
+    surpRaffle:  { es: 'Rifas en Vivo', en: 'Live Raffles' },
+    surpMore:    { es: 'Y más sorpresas durante la noche…', en: 'And more surprises throughout the night…' },
     ctaBtn:  { es: 'Comprar Boleto', en: 'Get Tickets' },
     ctaSub:  { es: 'Cupo Limitado · Riviera Tickets', en: 'Limited Capacity · Riviera Tickets' },
     ctaNote: { es: 'Serás redirigido a la plataforma oficial de boletos', en: 'You will be redirected to the official ticket platform' },
