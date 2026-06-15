@@ -80,7 +80,7 @@ body {
 }
 .vol-box {
   font-weight: 600;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 4px;
   color: var(--pink);
   text-transform: uppercase;
@@ -88,13 +88,48 @@ body {
   border: 1px solid #ff149340;
   padding: 6px 12px;
 }
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .date-tag {
   font-weight: 300;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 3px;
   color: var(--cyan);
   text-transform: uppercase;
   text-shadow: 0 0 8px var(--cyan);
+}
+
+/* ── LANGUAGE TOGGLE ─────────────────────── */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ffffff20;
+  padding: 4px 8px;
+  background: #0a0a0a;
+}
+.lang-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #777;
+  background: none;
+  border: none;
+  padding: 2px 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.lang-btn.active {
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+}
+.lang-sep {
+  color: #444;
+  font-size: 10px;
 }
 
 /* ── USA COMMEMORATIVE BADGE ─────────────── */
@@ -125,7 +160,7 @@ body {
 .usa-badge .flag-dots span:nth-child(2) { background: #f4f4f4; box-shadow: 0 0 5px #f4f4f4; }
 .usa-badge .flag-dots span:nth-child(3) { background: #3c5bff; box-shadow: 0 0 5px #3c5bff; }
 .usa-badge-text {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #bbb;
@@ -167,7 +202,7 @@ body {
 }
 .title-pre {
   font-weight: 200;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 7px;
   color: var(--green);
   text-transform: uppercase;
@@ -222,7 +257,7 @@ body {
 .slogan {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   padding: 0 46px;
   line-height: 1.7;
@@ -241,7 +276,7 @@ body {
 .reframe {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   padding: 0 50px;
   line-height: 1.6;
@@ -257,13 +292,38 @@ body {
   text-shadow: 0 0 10px var(--cyan);
 }
 
+/* ── GENRES LINE ─────────────────────────── */
+.genres-line {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow: 0 0 8px var(--cyan);
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
 /* ── COUNTDOWN ───────────────────────────── */
+.countdown-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #888;
+  text-align: center;
+  margin-top: 28px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+}
 .countdown {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 14px;
-  margin-top: 20px;
+  margin-bottom: 22px;
   position: relative;
   z-index: 2;
 }
@@ -271,11 +331,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 42px;
+  min-width: 48px;
 }
 .cd-num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
+  font-size: 34px;
   letter-spacing: 2px;
   line-height: 1;
   color: #fff;
@@ -283,14 +343,14 @@ body {
 }
 .cd-label {
   margin-top: 6px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 2px;
   color: #888;
   text-transform: uppercase;
 }
 .cd-sep {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1;
   color: var(--pink);
   text-shadow: 0 0 8px var(--pink);
@@ -302,7 +362,7 @@ body {
 .info-block {
   width: 100%;
   max-width: 360px;
-  margin-top: 28px;
+  margin-top: 0;
   position: relative;
   z-index: 2;
   display: flex;
@@ -326,7 +386,7 @@ body {
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 3px;
   color: #888;
   text-transform: uppercase;
@@ -342,7 +402,7 @@ body {
 .info-label .dot.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
 .info-value {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   letter-spacing: 2px;
   color: #fff;
 }
@@ -369,18 +429,18 @@ body {
 .usa-card-line1 .usa-card-text {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.7;
   color: #f0f0f0;
 }
 .usa-card-line1 .flag-emoji {
-  font-size: 22px;
+  font-size: 24px;
   font-style: normal;
   flex-shrink: 0;
 }
 .usa-card-tag {
   margin-top: 16px;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--cyan);
@@ -388,7 +448,7 @@ body {
 }
 .usa-card-decades {
   margin-top: 12px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #999;
   text-transform: uppercase;
@@ -396,7 +456,7 @@ body {
 }
 .usa-card-line2 {
   margin-top: 14px;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 1px;
   color: #ccc;
 }
@@ -416,7 +476,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #ddd;
@@ -449,7 +509,7 @@ body {
   width: 100%;
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 26px;
+  font-size: 32px;
   letter-spacing: 6px;
   color: #000;
   background: var(--pink);
@@ -466,7 +526,7 @@ body {
 }
 .cta-sub {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #aaa;
   text-transform: none;
@@ -475,7 +535,7 @@ body {
 }
 .cta-note {
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: var(--cyan);
   margin-top: 6px;
@@ -499,7 +559,7 @@ body {
   background: linear-gradient(90deg, transparent 0%, var(--pink) 30%, var(--green) 50%, var(--cyan) 70%, transparent 100%);
 }
 .footer-text {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 3px;
   color: #666;
   text-transform: uppercase;
@@ -545,21 +605,24 @@ body {
   }
 
   .title-section { margin-top: 0; padding: 0; }
-  .title-pre { font-size: 11px; letter-spacing: 9px; }
+  .title-pre { font-size: 13px; letter-spacing: 9px; }
   .title { font-size: 150px; letter-spacing: 22px; padding-left: 22px; }
 
   .rw-ball-wrap { max-width: 520px; margin-top: 26px; }
 
   .divider { width: 320px; margin-top: 30px; }
 
-  .slogan { font-size: 20px; padding: 0 10px; margin-top: 22px; max-width: 420px; }
+  .slogan { font-size: 24px; padding: 0 10px; margin-top: 22px; max-width: 420px; }
 
-  .reframe { font-size: 15px; padding: 0; max-width: 420px; }
+  .reframe { font-size: 17px; padding: 0; max-width: 420px; }
 
-  .countdown { gap: 20px; margin-top: 26px; }
-  .cd-item { min-width: 54px; }
-  .cd-num { font-size: 36px; }
-  .cd-sep { font-size: 30px; }
+  .genres-line { font-size: 14px; padding: 0; max-width: 420px; margin-top: 22px; }
+
+  .countdown-label { font-size: 12px; margin-top: 0; }
+  .countdown { gap: 24px; margin-bottom: 28px; }
+  .cd-item { min-width: 60px; }
+  .cd-num { font-size: 42px; }
+  .cd-sep { font-size: 34px; }
 
   .info-block, .highlights, .cta-wrap, .footer-line {
     max-width: 420px;
@@ -570,11 +633,11 @@ body {
     padding: 28px 32px;
   }
   .info-block { margin-top: 0; }
-  .info-value { font-size: 20px; }
+  .info-value { font-size: 24px; }
   .usa-card { margin-top: 18px; }
   .highlights { margin-top: 24px; }
   .cta-wrap { margin-top: 34px; }
-  .cta-btn { font-size: 30px; padding: 20px 0 17px; }
+  .cta-btn { font-size: 36px; padding: 20px 0 17px; }
 
   .footer { margin-top: 60px; }
 }
@@ -589,12 +652,19 @@ body {
 
   <div class="header">
     <div class="vol-box">Vol · 01</div>
-    <div class="date-tag">4 · Jul · 2026</div>
+    <div class="header-right">
+      <div class="date-tag">4 · Jul · 2026</div>
+      <div class="lang-toggle" role="group" aria-label="Selector de idioma / Language selector">
+        <button type="button" class="lang-btn active" id="langEs" data-lang="es">ES</button>
+        <span class="lang-sep">/</span>
+        <button type="button" class="lang-btn" id="langEn" data-lang="en">EN</button>
+      </div>
+    </div>
   </div>
 
   <div class="usa-badge">
     <div class="flag-dots"><span></span><span></span><span></span></div>
-    <div class="usa-badge-text">Edición especial · <strong>Toast de Medianoche</strong> por la Independencia de USA</div>
+    <div class="usa-badge-text" data-i18n="usaBadge">Edición especial · <strong>Toast de Medianoche</strong> por la Independencia de USA</div>
   </div>
 
   <div class="main-grid">
@@ -610,76 +680,79 @@ body {
 
       <div class="divider"><div class="dl"></div><div class="dm"></div><div class="dr"></div></div>
 
-      <div class="slogan">
+      <div class="slogan" data-i18n="slogan">
         La música cambió.<br>
         <span class="hl">Las ganas de bailar no.</span>
       </div>
 
-      <div class="reframe">
+      <div class="reframe" data-i18n="reframe">
         Los himnos que te hicieron bailar.<br>
         <span class="hl">Sin fecha de caducidad.</span>
       </div>
 
-      <div class="countdown" id="countdown" aria-label="Cuenta regresiva para REWIND">
-        <div class="cd-item"><span class="cd-num" id="cdDays">00</span><span class="cd-label">Días</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-item"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Hrs</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-item"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Min</span></div>
-        <div class="cd-sep">:</div>
-        <div class="cd-item"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Seg</span></div>
-      </div>
+      <div class="genres-line" data-i18n="genres">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
     </div>
 
     <div class="content-col">
+      <div class="countdown-label" data-i18n="countdownLabel">Cuenta Regresiva</div>
+      <div class="countdown" id="countdown" aria-label="Cuenta regresiva para REWIND">
+        <div class="cd-item"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-i18n="cdDays">Días</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdHours">00</span><span class="cd-label" data-i18n="cdHours">Hrs</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdMins">00</span><span class="cd-label" data-i18n="cdMins">Min</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span class="cd-num" id="cdSecs">00</span><span class="cd-label" data-i18n="cdSecs">Seg</span></div>
+      </div>
+
       <div class="info-block">
         <div class="info-row">
-          <div class="info-label"><span class="dot pink"></span>Fecha</div>
-          <div class="info-value">4 de Julio</div>
+          <div class="info-label"><span class="dot pink"></span><span data-i18n="lblFecha">Fecha</span></div>
+          <div class="info-value" data-i18n="valFecha">4 de Julio</div>
         </div>
         <div class="info-row">
-          <div class="info-label"><span class="dot yellow"></span>Horario</div>
-          <div class="info-value">19:00 — 1:00 hrs</div>
+          <div class="info-label"><span class="dot yellow"></span><span data-i18n="lblHorario">Horario</span></div>
+          <div class="info-value" data-i18n="valHorario">19:00 — 1:00 hrs</div>
         </div>
         <div class="info-row">
-          <div class="info-label"><span class="dot cyan"></span>Lugar</div>
+          <div class="info-label"><span class="dot cyan"></span><span data-i18n="lblLugar">Lugar</span></div>
           <div class="info-value">Be Playa</div>
         </div>
         <div class="info-row highlight">
-          <div class="info-label"><span class="dot green"></span>Acto Estelar</div>
-          <div class="info-value highlight">Cantante + DJ</div>
+          <div class="info-label"><span class="dot green"></span><span data-i18n="lblActo">Acto Estelar</span></div>
+          <div class="info-value highlight" data-i18n="valActo">Cantante + DJ</div>
         </div>
       </div>
 
       <div class="usa-card">
         <div class="usa-card-line1">
           <span class="flag-emoji">🇲🇽</span>
-          <span class="usa-card-text">Las banderas nos distinguen.<br>La música nos une.</span>
+          <span class="usa-card-text" data-i18n="usaCardText">Las banderas nos distinguen.<br>La música nos une.</span>
           <span class="flag-emoji">🇺🇸</span>
         </div>
         <div class="usa-card-tag">4th of July Independence Celebration</div>
         <div class="usa-card-decades">70s · 80s · 90s · 2000s — Funk · Electro · Rock · House</div>
-        <div class="usa-card-line2">Revive la música que marcó una generación.</div>
+        <div class="usa-card-line2" data-i18n="usaCardLine2">Revive la música que marcó una generación.</div>
       </div>
 
       <div class="highlights">
-        <div class="tag"><span class="dot pink"></span>Cantante en Vivo</div>
+        <div class="tag"><span class="dot pink"></span><span data-i18n="tagCantante">Cantante en Vivo</span></div>
         <div class="tag"><span class="dot cyan"></span>DJ Set</div>
-        <div class="tag"><span class="dot green"></span>Sax en Vivo</div>
-        <div class="tag"><span class="dot yellow"></span>Photobooth Retro</div>
+        <div class="tag"><span class="dot green"></span><span data-i18n="tagSax">Sax en Vivo</span></div>
+        <div class="tag"><span class="dot yellow"></span><span data-i18n="tagPhotobooth">Photobooth Retro</span></div>
       </div>
 
       <div class="cta-wrap">
-        <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener">Comprar Boleto</a>
-        <div class="cta-sub">Cupo Limitado · Riviera Tickets</div>
-        <div class="cta-note">Serás redirigido a la plataforma oficial de boletos</div>
+        <a class="cta-btn" href="https://www.rivieratickets.com" target="_blank" rel="noopener" data-i18n="ctaBtn">Comprar Boleto</a>
+        <div class="cta-sub" data-i18n="ctaSub">Cupo Limitado · Riviera Tickets</div>
+        <div class="cta-note" data-i18n="ctaNote">Serás redirigido a la plataforma oficial de boletos</div>
       </div>
     </div>
   </div>
 
   <div class="footer">
     <div class="footer-line"></div>
-    <div class="footer-text">Be Playa &nbsp;·&nbsp; Playa del Carmen<br>4 de Julio · 2026</div>
+    <div class="footer-text" data-i18n="footerText">Be Playa &nbsp;·&nbsp; Playa del Carmen<br>4 de Julio · 2026</div>
   </div>
 </div>
 
@@ -822,6 +895,83 @@ body {
   }
   tick();
   setInterval(tick, 1000);
+})();
+</script>
+
+<script>
+(function(){
+  var i18n = {
+    usaBadge: {
+      es: 'Edición especial · <strong>Toast de Medianoche</strong> por la Independencia de USA',
+      en: 'Special Edition · <strong>Midnight Toast</strong> for US Independence'
+    },
+    slogan: {
+      es: 'La música cambió.<br><span class="hl">Las ganas de bailar no.</span>',
+      en: 'The music changed.<br><span class="hl">The urge to dance didn\'t.</span>'
+    },
+    reframe: {
+      es: 'Los himnos que te hicieron bailar.<br><span class="hl">Sin fecha de caducidad.</span>',
+      en: 'The anthems that made you dance.<br><span class="hl">No expiration date.</span>'
+    },
+    genres: {
+      es: '70s · 80s · 90s · 2000s — Funk · Electro · Rock · House',
+      en: '70s · 80s · 90s · 2000s — Funk · Electro · Rock · House'
+    },
+    countdownLabel: {
+      es: 'Cuenta Regresiva',
+      en: 'Countdown'
+    },
+    cdDays: { es: 'Días', en: 'Days' },
+    cdHours: { es: 'Hrs', en: 'Hrs' },
+    cdMins: { es: 'Min', en: 'Min' },
+    cdSecs: { es: 'Seg', en: 'Sec' },
+    lblFecha:  { es: 'Fecha', en: 'Date' },
+    lblHorario:{ es: 'Horario', en: 'Time' },
+    lblLugar:  { es: 'Lugar', en: 'Venue' },
+    lblActo:   { es: 'Acto Estelar', en: 'Headline Act' },
+    valFecha:  { es: '4 de Julio', en: 'July 4th' },
+    valHorario:{ es: '19:00 — 1:00 hrs', en: '7:00 PM — 1:00 AM' },
+    valActo:   { es: 'Cantante + DJ', en: 'Live Singer + DJ' },
+    usaCardText: {
+      es: 'Las banderas nos distinguen.<br>La música nos une.',
+      en: 'Different flags set us apart.<br>The music brings us together.'
+    },
+    usaCardLine2: {
+      es: 'Revive la música que marcó una generación.',
+      en: 'Relive the music that defined a generation.'
+    },
+    tagCantante:   { es: 'Cantante en Vivo', en: 'Live Singer' },
+    tagSax:        { es: 'Sax en Vivo', en: 'Live Sax' },
+    tagPhotobooth: { es: 'Photobooth Retro', en: 'Retro Photobooth' },
+    ctaBtn:  { es: 'Comprar Boleto', en: 'Get Tickets' },
+    ctaSub:  { es: 'Cupo Limitado · Riviera Tickets', en: 'Limited Capacity · Riviera Tickets' },
+    ctaNote: { es: 'Serás redirigido a la plataforma oficial de boletos', en: 'You will be redirected to the official ticket platform' },
+    footerText: {
+      es: 'Be Playa &nbsp;·&nbsp; Playa del Carmen<br>4 de Julio · 2026',
+      en: 'Be Playa &nbsp;·&nbsp; Playa del Carmen<br>July 4th · 2026'
+    }
+  };
+
+  var btnEs = document.getElementById('langEs');
+  var btnEn = document.getElementById('langEn');
+  if(!btnEs || !btnEn) return;
+
+  function applyLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(i18n[key] && i18n[key][lang] !== undefined) el.innerHTML = i18n[key][lang];
+    });
+    btnEs.classList.toggle('active', lang === 'es');
+    btnEn.classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+    sessionStorage.setItem('rewindLang', lang);
+  }
+
+  btnEs.addEventListener('click', function(){ applyLang('es'); });
+  btnEn.addEventListener('click', function(){ applyLang('en'); });
+
+  var saved = sessionStorage.getItem('rewindLang');
+  if(saved === 'en') applyLang('en');
 })();
 </script>
 </body>
